@@ -8,7 +8,7 @@ namespace EnumsOpdracht
         {
             // write the different colors
             Colors[] ColorsArr = (Colors[])typeof(Colors).GetEnumValues();
-            foreach(var color in ColorsArr)
+            foreach(Colors color in ColorsArr)
             {
                 Console.WriteLine(color);
             }
