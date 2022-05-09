@@ -6,7 +6,32 @@ namespace EnumsOpdracht
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // write the different colors
+            Colors[] ColorsArr = (Colors[])typeof(Colors).GetEnumValues();
+            foreach(var color in ColorsArr)
+            {
+                Console.WriteLine(color);
+            }
+
+            // user input
+            string value = Console.ReadLine();
+            Colors parsedColor;
+            try
+            {
+                parsedColor = (Colors)Enum.Parse(typeof(Colors), value);
+                Console.WriteLine($"{parsedColor}: {(int)parsedColor}");
+            } catch(Exception _)
+            {
+                Console.WriteLine("Dat is geen kleur");
+            }
         }
+    }
+ 
+    internal enum Colors
+    {
+        Red,
+        Green,
+        Blue,
+        Yellow
     }
 }
